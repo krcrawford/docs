@@ -23,15 +23,3 @@ netstat -a -b
 ```
 
 You can change the port to be used in the `docker-compose.yml` file (default is port 80).
-
-## Using API Platform and JMS Serializer in the same project
-
-By default, [JMS Serializer Bundle](http://jmsyst.com/bundles/JMSSerializerBundle) replaces the `serializer` service by its own. However, API Platform requires the Symfony serializer (and not the JMS one) to work properly.
-Fortunately, this behavior can be deactivated using the following configuration:
-
-```yaml
-# api/config/packages/api_platform.yaml
-
-jms_serializer:    
-    enable_short_alias: false
-```
